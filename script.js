@@ -1,4 +1,4 @@
-const randomNbr = Math.ceil(Math.random() * 20);
+let randomNbr = Math.ceil(Math.random() * 20);
 console.log(randomNbr);
 
 let message = document.querySelector(".msg");
@@ -10,6 +10,8 @@ let topScore = 0;
 
 document.querySelector(".check").onclick = () => {
   guessNbr = document.querySelector(".guess").value;
+  console.log("d hejdslkdsfd dskfdşosfn", randomNbr, guessNbr);
+
   if (!guessNbr) {
     message.textContent = "Please enter a number";
     message.style.color = "red";
@@ -18,6 +20,8 @@ document.querySelector(".check").onclick = () => {
     message.style.color = "red";
     number.textContent = randomNbr;
     number.style.backgroundColor = "#60bf81";
+    document.querySelector("body").style.backgroundColor = "#9fd948";
+
     number.style.color = "white";
     guessNbr = "";
     document.querySelector(".check").disabled = true;
@@ -50,14 +54,14 @@ document.querySelector(".check").onclick = () => {
 
 //**Again butonuna basınca olacaklar */
 document.querySelector(".again").onclick = () => {
-  random = Math.ceil(Math.random() * 20);
-  console.log(random);
+  console.log("sadbsaddbsdf");
+
   message.textContent = "New game starts";
   document.querySelector("body").style.backgroundColor = "gray";
   document.querySelector(".number").textContent = "?";
   document.querySelector(".guess").value = "";
-
+  randomNbr = Math.ceil(Math.random() * 20);
   myScore = 10;
   document.querySelector(".my-score").textContent = myScore;
-  document.querySelector(".check").disabled = "false";
+  document.querySelector(".check").disabled = false;
 };
